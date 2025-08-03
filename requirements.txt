@@ -4,6 +4,5 @@ uvicorn[standard]
 requests
 numpy
 pandas
-scikit-learn
 faiss-cpu
 sentence-transformers
