@@ -4,11 +4,21 @@ import faiss
 import re
 import os
 
-# Load and prepare dataframe
-DATA_DIR = "data"
-CSV_FILE = os.path.join(DATA_DIR, "bible_with_embeddings_and_clusters.csv")
+# Get the absolute path of the current file
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-df = pd.read_csv(CSV_FILE)
+# Go one level up to project root
+project_root = os.path.abspath(os.path.join(current_dir, ".."))
+
+# Go into the data directory
+data_dir = os.path.join(project_root, "data")
+
+# Construct full path to the CSV file
+csv_file = os.path.join(data_dir, "bible_with_embeddings_and_clusters.csv")
+
+# Load the DataFrame
+df = pd.read_csv(csv_file)
+
 
 
 def clean_embedding(embedding_str):

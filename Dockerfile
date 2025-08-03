@@ -8,14 +8,14 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
+# Copy the entire project
 COPY . .
 
-# Download data at build time
+# Download data at build time (executed once during image build)
 RUN python download_data.py
 
-# Expose the port
+# Expose port for FastAPI
 EXPOSE 8000
 
-# Run the app
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start the API
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
