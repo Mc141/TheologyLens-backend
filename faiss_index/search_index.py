@@ -2,10 +2,13 @@ import pandas as pd
 import numpy as np
 import faiss
 import re
+import os
 
 # Load and prepare dataframe
-df = pd.read_csv("../data/bible_with_embeddings_and_clusters.csv")
+DATA_DIR = "data"
+CSV_FILE = os.path.join(DATA_DIR, "bible_with_embeddings_and_clusters.csv")
 
+df = pd.read_csv(CSV_FILE)
 
 
 def clean_embedding(embedding_str):

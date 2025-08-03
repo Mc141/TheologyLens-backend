@@ -3,7 +3,7 @@ __pycache__/
 *.pyo
 *.pyd
 *.npy
-*.npz
-data/*
-!data/.keep 
 *.csv
+*.db
+*.log
+data/

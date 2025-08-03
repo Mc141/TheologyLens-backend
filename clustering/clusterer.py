@@ -1,7 +1,10 @@
 import numpy as np
+import os
 
 # Load centroids
-centroids = np.load('../data/centroids.npy')
+DATA_DIR = "data"
+centroids_path = os.path.join(DATA_DIR, "centroids.npy")
+centroids = np.load(centroids_path)
 
 def find_closest_clusters(query_embedding: np.ndarray, top_k: int = 5):
     """
