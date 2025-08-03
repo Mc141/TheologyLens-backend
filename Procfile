@@ -1,1 +1,1 @@
-web: python download_data.py && uvicorn api.routes.main:app --host=0.0.0.0 --port=${PORT}
+web: python download_data.py && uvicorn api.main:app --host=0.0.0.0 --port=${PORT}
